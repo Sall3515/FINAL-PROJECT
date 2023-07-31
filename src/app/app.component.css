@@ -1,0 +1,14 @@
+* {
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+}
+.contain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark {
+  background-color: rgba(0, 1, 5, 0.736);
+}

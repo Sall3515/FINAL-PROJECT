@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(87, 76, 76, 0.357);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #27020245;
+}
+/* width */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+/* light theme */
+:root {
+  --btn-color: rgba(80, 24, 24, 0.963);
+  --paragraph-clr: rgb(74, 6, 6);
+  --white-clr: white;
+
+  /* btn hover styles */
+  --transition-btn: 0.2s;
+  --transform-btn: scale(1.1);
+  --cursor-btn: pointer;
+  --background-color-btn: rgba(0, 0, 0, 0.853);
+  --border-btn: none;
+  /*btn dark*/
+  --background-color-dark: rgb(79, 226, 236);
+
+  /* cover image styles */
+  --background-repeat: no-repeat;
+  --background-size: cover;
+  --attachment-image: fixed;
+  --text-align-center: center;
+  --filter-image: contrast(0.85);
+}

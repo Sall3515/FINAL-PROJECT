@@ -1,0 +1,12 @@
+<div [class.dark]="themeService.settheme" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="search">
+        <input [(ngModel)]="productSearch" [class.second-input]="themeService.settheme" type="text" class="search-term"
+            placeholder="Search">
+        <button type="submit" class="search-button" [class.second-search-button]="themeService.settheme">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+
+    <app-card class="col" *ngFor="let cards of card |productFilter:productSearch" [card]="cards"
+        (addToCart)="onAddToCart($event)"></app-card>
+</div>

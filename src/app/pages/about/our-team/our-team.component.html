@@ -1,0 +1,26 @@
+<!-- გამოყენებულია template driven forms  -->
+
+<div [class.dark]="themeService.settheme" class="story">
+    <form #sendMessage="ngForm" (ngSubmit)="message()">
+        <h1 [class.white]=" themeService.settheme">contact us</h1>
+
+        <div>
+            <input [(ngModel)]="userMessage.email" [class.input-color]="themeService.settheme" type="email" name="email"
+                id="email" placeholder="Enter email" #emailControl="ngModel" required email>
+        </div>
+        <div class="warning" *ngIf="emailControl.dirty && emailControl.errors?.['email']">
+            <p> Please include an '@' symbol in your email address</p>
+        </div>
+
+        <div>
+
+            <textarea [(ngModel)]="userMessage.textarea" [class.input-color]=" themeService.settheme" name="textarea"
+                id="textarea" cols="30" rows="8" [class.white]="themeService.settheme"
+                placeholder="Enter your message..." #textareaControl="ngModel" required></textarea>
+        </div>
+
+
+        <button [class.btn-color]="themeService.settheme" [disabled]="emailControl.invalid  || textareaControl.invalid"
+            class="btn" type="submit">Send<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    </form>
+</div>

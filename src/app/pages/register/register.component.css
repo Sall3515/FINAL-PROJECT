@@ -1,0 +1,125 @@
+h2 {
+  text-align: var(--text-align-center);
+  padding: 10px;
+  padding-top: 20px;
+  color: var(--paragraph-clr);
+}
+p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: rgba(231, 50, 50, 0.875);
+}
+input {
+  color: var(--paragraph-clr);
+}
+button.plus {
+  position: relative;
+  top: -36.8px;
+  left: 277px;
+  background-color: rgba(17, 161, 17, 0.747);
+  border-radius: 0;
+}
+button.delete {
+  position: relative;
+  top: -36.8px;
+  left: 276.5px;
+  background-color: rgba(235, 24, 87, 0.845);
+  border-radius: 0;
+}
+.container {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+.register-form {
+  position: relative;
+  z-index: 2;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 20px;
+}
+.row {
+  width: 400px;
+  margin: 0 auto;
+  border: var(--border-btn);
+  padding: 20px;
+  height: fit-content;
+  border-radius: 12px;
+  box-shadow: -2px 5px 18px 1px #60061125;
+}
+.btn {
+  background-color: rgba(76, 13, 13, 0.764);
+  color: var(--white-clr);
+  border: var(--border-btn);
+  transition: var(--transition-btn);
+}
+.btn:hover {
+  transform: var(--transform-btn);
+  cursor: var(--cursor-btn);
+}
+#inputjob {
+  border-radius: 5px 0px 0 5px;
+}
+.p {
+  text-align: var(--text-align-center);
+  margin-bottom: 30px;
+  color: var(--paragraph-clr);
+}
+.plus:hover {
+  transform: scale(1);
+  cursor: var(--cursor-btn);
+  background-color: rgba(11, 86, 16, 0.87);
+}
+.delete:hover {
+  transform: scale(1);
+  cursor: var(--cursor-btn);
+  background-color: rgba(212, 6, 13, 0.87);
+}
+.job {
+  margin-top: 5px;
+}
+.joblist {
+  height: 10px;
+  color: black;
+}
+
+@media (max-width: 450px) {
+  .register-form {
+    min-width: 270px;
+  }
+  button.plus {
+    top: -36.8px;
+    left: 80.5%;
+  }
+  button.delete {
+    position: relative;
+    top: -36.8px;
+    left: 80.5%;
+  }
+}
+
+/* dark theme */
+.image-dark {
+  filter: brightness(0.9);
+}
+.dark {
+  background-color: rgba(0, 1, 5, 0.736);
+}
+.white {
+  color: rgba(255, 255, 255, 0.811);
+}
+.btn-color {
+  background-color: rgba(62, 220, 231, 0.882);
+  color: rgb(255, 255, 255);
+}
+.color {
+  color: rgba(118, 209, 216, 0.882);
+}
+.form-color {
+  background-color: rgb(12, 11, 17);
+  box-shadow: -2px 5px 18px 1px #09439325;
+}
+.input-color {
+  filter: brightness(0.6);
+}

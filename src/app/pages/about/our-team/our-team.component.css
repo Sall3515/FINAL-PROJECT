@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+h1 {
+  text-align: var(--text-align-center);
+  font-size: 50px;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  color: var(--paragraph-clr);
+  padding-top: 50px;
+}
+textarea,
+input {
+  width: 550px;
+  margin-top: 30px;
+  border-radius: 5px;
+  border: var(--border-btn);
+  padding: 5px 10px;
+  outline: none;
+  opacity: 0.95;
+}
+i {
+  color: var(--white-clr);
+  padding-left: 10px;
+}
+input {
+  height: 35px;
+}
+p {
+  text-align: left;
+  font-size: 13px;
+  color: rgba(224, 56, 56, 0.789);
+  padding-top: 5px;
+}
+
+button {
+  width: 100px;
+  height: 37px;
+  margin-top: 50px;
+  background-color: var(--btn-color);
+  color: var(--white-clr);
+  transition: var(--transition-btn);
+}
+button:hover {
+  transform: var(--transform-btn);
+  cursor: var(--cursor-btn);
+  background-color: var(--background-color-btn);
+  color: var(--white-clr);
+}
+button:disabled {
+  background-color: rgba(95, 70, 70, 0.73);
+  color: aliceblue;
+}
+.story {
+  display: flex;
+  text-align: var(--text-align-center);
+  justify-content: center;
+  background-color: rgba(158, 23, 23, 0.116);
+  width: 100%;
+  min-height: 100vh;
+}
+.story {
+  background-image: url("https://images.unsplash.com/photo-1560070094-e1f2ddec4337?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+  background-position: 10%;
+  background-repeat: var(--background-repeat);
+  background-size: var(--background-size);
+}
+
+@media (max-width: 700px) {
+  textarea,
+  input {
+    width: 70vw;
+    margin-top: 50px;
+    border-radius: 5px;
+    border: var(--border-btn);
+    padding: 5px 10px;
+  }
+  h1 {
+    font-size: 23px;
+  }
+}
+
+/* dark theme */
+.dark {
+  background-color: rgba(0, 1, 5, 0.736);
+}
+
+.white {
+  color: rgba(0, 0, 0, 0.779);
+}
+
+.image-dark {
+  filter: brightness(0.7);
+}
+.btn-color {
+  background-color: var(--background-color-dark);
+  color: rgb(255, 255, 255);
+}
+.input-color {
+  background-color: rgba(202, 198, 198, 0.865);
+}

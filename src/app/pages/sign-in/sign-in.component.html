@@ -1,0 +1,53 @@
+<!-- ამ  კომპონენტში template driven forms-არის გამოყენებული -->
+
+<ng-container *ngIf="vm$|async as vm">
+    <div class="form" [class.dark]="themeService.settheme">
+        <div class="logo">
+            <img [class.image-dark]="themeService.settheme" src="/assets/images/log.png" width="150px" alt="">
+        </div>
+        <form #signIn="ngForm" (ngSubmit)="OnSignIn()">
+            <div class="mb-3">
+
+                <label [class.white]="themeService.settheme" for="username" class="form-label">User Name </label>
+                <input [class.input-color]="themeService.settheme" [(ngModel)]="signInInfo.username" name="username"
+                    type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                    #usernameControl="ngModel" required>
+                <div class="warning" *ngIf="usernameControl.invalid && usernameControl.dirty">
+                    <p> Please enter user name </p>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <label [class.white]="themeService.settheme" for="exampleInputPassword1"
+                    class="form-label">Password</label>
+                <input [class.input-color]="themeService.settheme" [(ngModel)]="signInInfo.password" name="password"
+                    type="password" class="form-control" id="exampleInputPassword1" #passwordControl="ngModel"
+                    pattern="[a-zA-Z0-9]+" required>
+                <!-- პატერნი პლიუსის გარეშე მხოლოდ ერთ სიმბოლოს ტიპს საზღვრავს  ???მგონი-->
+                <div class="warning" *ngIf="passwordControl.dirty&& passwordControl.errors?.['pattern']">
+                    <p> Please enter password </p>
+                </div>
+
+            </div>
+            <div class="invalid" *ngIf="vm.errorMessage">
+                <p class="error">{{vm.errorMessage }}</p>
+            </div>
+            <div>
+                <label class="link-label form-label text-secondary">Create your account</label>
+                <a [class.color]="themeService.settheme" routerLink="/register">Sign Up</a>
+            </div>
+            <button [class.btn-color]="themeService.settheme"
+                [disabled]="usernameControl.invalid  || passwordControl.invalid ||vm.loading" type="submit"
+                class="btn btn-primary">
+                <ng-container *ngIf="!vm.loading">Log In</ng-container>
+                <ng-container *ngIf="vm.loading">
+                    <div class="spinner-border text-light" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </ng-container>
+
+            </button>
+        </form>
+
+    </div>
+</ng-container>

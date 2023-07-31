@@ -1,0 +1,81 @@
+<!-- ამ  კომპონენტში reactive forms-არის გამოყენებული -->
+
+<div class="container" [class.dark]="themeService.settheme">
+    <div>
+        <h2 [class.white]="themeService.settheme">
+            Sign Up
+        </h2>
+        <p class="p" [class.white]="themeService.settheme">It's quick and easy.</p>
+    </div>
+    <div class="register-form">
+        <form [formGroup]="registerInfo" [class.form-color]="themeService.settheme" class="row g-3"
+            (ngSubmit)="onSignUp()">
+            <div class="col-12">
+                <label [class.white]="themeService.settheme" for="inputName" class="form-label">First Name</label>
+                <input [class.input-color]="themeService.settheme" name="firstName" type="text" class="form-control"
+                    id="inputName" placeholder="First Name" formControlName="firstName" required>
+            </div>
+            <div class="col-12">
+                <label [class.white]="themeService.settheme" for="inputLastName" class="form-label">Last Name</label>
+                <input [class.input-color]="themeService.settheme" name="lastName" type="text" class="form-control"
+                    id="inputLastName" placeholder="Last Name" formControlName="lastName" required>
+            </div>
+
+
+
+            <div class="col-12" formArrayName="previousJobs">
+
+                <label [class.white]="themeService.settheme" for="inputjob" class="form-label">Previous Jobs
+                </label>
+                <input [class.input-color]="themeService.settheme" name="job" type="text" class="form-control job"
+                    id="inputjob" placeholder="Add jobs" *ngFor="let jobControl of previousJobs.controls; let i = index"
+                    [formControlName]="i">
+
+                <button (click)="addPreviousJobs()" type="button" class="btn plus">
+                    +</button>
+
+                <button (click)="deleteJobs()" type="button" class="btn delete">
+                    x</button>
+
+            </div>
+
+            <div class="col-md-12">
+                <label [class.white]="themeService.settheme" for="inputEmail" class="form-label">Email</label>
+                <input [class.input-color]="themeService.settheme" name="email" type="email" class="form-control"
+                    id="inputEmail" formControlName="email" required>
+
+                <div class="validation-error" *ngIf="controls.email.errors?.['email']&& controls.email.dirty">
+                    <p> Please include an '@' symbol in your email address</p>
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <label [class.white]="themeService.settheme" for="inputPassword" class="form-label">Password</label>
+                <input (input)="controls.confirmPassword.updateValueAndValidity()"
+                    [class.input-color]="themeService.settheme" name="password" type="password" class="form-control"
+                    id="inputPassword" formControlName="password" required>
+
+                <div class="validation-error" *ngIf="controls.password.errors?.['pattern']&& controls.password.dirty">
+                    <p> Password should contain at least one of this A-z ,0-9,!.#$%^& characters</p>
+                </div>
+            </div>
+
+            <div class=" col-md-6">
+                <label [class.white]="themeService.settheme" for="confirmPassword" class="form-label"> Confirm
+                    Password</label>
+                <input [class.input-color]="themeService.settheme" name="password" type="password" class="form-control"
+                    id="confirmPassword" formControlName="confirmPassword" required>
+            </div>
+
+            <div class="col-12">
+                <button (click)="deleteJobs()" [class.btn-color]="themeService.settheme" type="submit"
+                    class="btn btn-primary" [disabled]="registerInfo.invalid">Create
+                    Account</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- ვალიდაციის მესიჯები დამატებულია იმეილის  და პაროლის ველზე  -->

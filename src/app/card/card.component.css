@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+h2 {
+  color: var(--paragraph-clr);
+}
+p {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--paragraph-clr);
+}
+img {
+  position: relative;
+  top: -138px;
+}
+.card {
+  font-family: "Raleway", sans-serif;
+  text-align: var(--text-align-center);
+  padding: 15px;
+  height: 450px;
+  width: 290px;
+  margin: 0 auto;
+  margin-top: 190px;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  box-shadow: -2px 5px 20px 1px #18066047;
+  transition: var(-transition-btn);
+  margin-bottom: 50px;
+}
+.container {
+  position: relative;
+  top: -130px;
+  text-align: var(--text-align-center);
+}
+.cart {
+  position: relative;
+  top: -130px;
+  left: 55px;
+  border: var(--border-btn);
+  width: 150px;
+  border-radius: 20px;
+  color: var(--white-clr);
+  padding: 10px 15px;
+  background-color: rgba(38, 85, 238, 0.746);
+  transition: var(-transition-btn);
+}
+.cart:hover {
+  background-color: rgba(82, 177, 50, 0.789);
+  transform: var(--transform-btn);
+  cursor: var(--cursor-btn);
+}
+.switcher {
+  background-color: rgba(241, 88, 12, 0.866);
+  color: var(--white-clr);
+  padding: 13px;
+  border: var(--border-btn);
+  border-radius: 10px;
+  margin: 15px;
+  transition: var(-transition-btn);
+}
+.switcher:hover {
+  transform: scale(1.1);
+}
+.delete-cart {
+  position: relative;
+  top: -125px;
+  left: 78px;
+  width: 100px;
+  padding: 4px;
+  background-color: rgb(255, 27, 122);
+  color: var(--white-clr);
+  border: var(--border-btn);
+  border-radius: 20px;
+  transition: var(-transition-btn);
+}
+.delete-cart:hover {
+  background-color: rgba(242, 29, 72, 0.985);
+  transform: var(--transform-btn);
+  cursor: var(--cursor-btn);
+}
+.btn {
+  position: relative;
+  top: -113px;
+  left: 90px;
+  padding: 4px;
+  width: 80px;
+  background-color: rgba(38, 85, 238, 0.746);
+  border-radius: 20px;
+  transition: var(-transition-btn);
+  border: var(--border-btn);
+  color: var(--white-clr);
+}
+.btn:hover {
+  background-color: rgba(82, 177, 50, 0.789);
+  transform: var(--transform-btn);
+  cursor: var(--cursor-btn);
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 280px;
+  }
+}
+.currency {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* dark theme */
+.image-dark {
+  filter: brightness(0.85);
+}
+.image-dark {
+  filter: brightness(0.94);
+}
+
+.white {
+  color: var(--white-clr);
+}
+
+.dark {
+  background-color: rgba(5, 4, 24, 0.89);
+}

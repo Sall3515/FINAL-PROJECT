@@ -1,0 +1,20 @@
+<div class="container" [class.dark]="themeService.settheme">
+
+    <h2 [class.white]="themeService.settheme">My Cart</h2>
+
+
+    <div class="line" [class.white-line]="themeService.settheme"></div>
+    <h5 [class.yellow]="themeService.settheme"> Cost: {{sum | currency: "EUR"}}</h5>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+        <div class="emptycart" *ngIf="card.length === 0">
+            <h1>Cart is empty</h1>
+        </div>
+        <app-card class="col" *ngFor="let cards of card" [card]="cards" [isCart]="true" (deleteC)="onDelete($event)">
+        </app-card>
+
+
+
+    </div>
+</div>

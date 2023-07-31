@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-size: 60px;
+  opacity: 0.7;
+  color: rgba(0, 0, 0, 0.489);
+}
+h2 {
+  font-size: 20px;
+  padding-top: 30px;
+  padding-left: 40px;
+  color: var(--paragraph-clr);
+}
+h5 {
+  padding-top: 0px;
+  padding-left: 40px;
+  margin-top: 10px;
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 100%;
+}
+.line {
+  border-top: 1px solid var(--paragraph-clr);
+  margin: 0 40px;
+}
+.emptycart {
+  text-align: var(--text-align-center);
+  width: 100%;
+  margin-top: 160px;
+}
+
+/* dark theme */
+
+.dark {
+  background-color: rgba(0, 1, 5, 0.736);
+}
+.white-line {
+  border-top: 1px solid rgba(255, 255, 255, 0.892);
+}
+.white {
+  color: rgba(255, 255, 255, 0.866);
+}
+.yellow {
+  color: rgba(228, 231, 23, 0.662);
+}

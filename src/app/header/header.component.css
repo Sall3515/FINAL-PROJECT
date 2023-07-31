@@ -1,0 +1,179 @@
+nav {
+  height: 90px;
+  text-align: var(--text-align-center);
+  box-shadow: -2px 5px 20px 1px #1806601a;
+}
+input {
+  height: 90%;
+}
+button.btn {
+  height: 90%;
+  margin-left: 15px;
+}
+a {
+  font-size: 30px;
+  margin-left: 20px;
+}
+li > a {
+  font-size: 16px;
+}
+p {
+  align-self: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+a:focus {
+  color: rgba(21, 155, 182, 0.897);
+}
+a.navbar-brand:focus {
+  color: inherit;
+  /* შეიძლება წავშალო */
+}
+.dropdown-item {
+  margin: 0;
+}
+.dropdown-item:hover {
+  color: rgba(66, 191, 208, 0.942);
+  transition: 0.3s ease-in-out;
+}
+.loginicon {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 25px;
+}
+.loginicon > i {
+  font-size: 24px;
+  margin-right: 10px;
+  margin-bottom: 14px;
+}
+.logout {
+  display: flex;
+  align-items: center;
+}
+.logout > a {
+  font-size: 15px;
+  width: 70px;
+  text-decoration: none;
+  margin-bottom: 7px;
+  margin-left: -5px;
+}
+.logout > a:focus {
+  color: rgba(94, 175, 185, 0.818);
+}
+.form-check {
+  margin-left: 20px;
+}
+.navbar-brand {
+  cursor: pointer;
+}
+
+/* switcher */
+.switcher {
+  margin: 0 13px;
+  margin-left: 18px;
+}
+#toggle_checkbox {
+  display: none;
+}
+.label {
+  display: block;
+  width: 50px;
+  height: 26px;
+  margin: 0 auto;
+  background-color: #c9cbcd;
+  border-radius: 56px;
+  transform: translateY(25%);
+  cursor: var(--cursor-btn);
+  transition: 0.3s ease background-color;
+  overflow: hidden;
+}
+#star {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: #535350;
+  transform: scale(1);
+  border-radius: 50%;
+  transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform,
+    0.3s ease background-color;
+  z-index: 2;
+}
+#toggle_checkbox:checked + label {
+  background-color: rgb(84, 83, 83);
+}
+
+#toggle_checkbox:checked + label #star {
+  left: 28.5px;
+  background-color: var(--white-clr);
+}
+.navbar-small {
+  display: none;
+}
+
+@media (max-width: 1055px) {
+  * {
+    text-decoration: none;
+  }
+  h5 {
+    margin-left: -11%;
+  }
+  a > img {
+    margin-left: -30px;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .navbar-big {
+    display: none;
+  }
+  .navbar-small {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .container-fluid {
+    box-shadow: -2px 5px 20px 1px #1806601a;
+    height: 100%;
+  }
+  .offcanvas-title {
+    margin-top: 10px;
+  }
+  .whitenav {
+    background-color: var(--white-clr);
+    opacity: 0.8;
+  }
+  .dropdown {
+    margin-left: 16px;
+  }
+  .black {
+    color: black;
+  }
+  .switcher {
+    margin: 0 13px;
+    margin-left: 18px;
+  }
+  #toggle_checkbox2:checked + label {
+    background-color: rgb(84, 83, 83);
+  }
+  #toggle_checkbox2:checked + label #star {
+    left: 28.5px;
+    background-color: var(--white-clr);
+  }
+  #toggle_checkbox2 {
+    display: none;
+  }
+}
+/* dark theme */
+.image-dark {
+  filter: brightness(0.94);
+}
+.dark {
+  background-color: #000000;
+  color: var(--white-clr);
+}
+.white {
+  color: rgba(255, 255, 255, 0.811);
+}

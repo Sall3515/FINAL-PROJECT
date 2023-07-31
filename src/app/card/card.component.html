@@ -1,0 +1,18 @@
+<div [class.dark]="themeService.settheme" class="card ">
+    <img [class.image-dark]="themeService.settheme" [src]="card.image" alt="Avatar" style="width:100% ">
+
+    <div class="container">
+        <h2 [class.white]="themeService.settheme">{{card.title}}</h2>
+        <p [class.white]="themeService.settheme">{{card.description}}
+        </p>
+        <p class="currency" [class.white]="themeService.settheme">{{card.price | currency: "EUR"}}
+        </p>
+    </div>
+
+    <button class="cart" *ngIf="!isCart && this.a" (click)="addToCart.emit(card.id)">ADD TO
+        CART</button>
+
+    <button class="delete-cart" *ngIf="isCart" (click)="deleteC.emit(card.id) "> DELETE</button>
+    <button class="btn" *ngIf="isCart">BUY</button>
+
+</div>

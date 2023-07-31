@@ -1,0 +1,64 @@
+<div class="container" [class.dark]="themeService.settheme">
+
+    <h2 [class.white]="themeService.settheme"> Nutrients in food</h2>
+    <div [class.white-line]="themeService.settheme" class="line"></div>
+    <p class="note" [class.white]="themeService.settheme"> Make a choise based on numbers </p>
+
+    <div *ngIf="loading" class="loaders">
+        <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <ng-container *ngIf="!this.fruitData._links">
+        <h1 [class.white]="themeService.settheme" class="warning-text">Product does not exist.</h1>
+        <div class="go-back-button">
+            <button [class.btn]="themeService.settheme">
+                <a href="/home">Go Back</a>
+            </button>
+        </div>
+
+    </ng-container>
+
+
+    <ng-container *ngIf="this.fruitData._links">
+        <div class="recipe-box" [class.box-shadow]="themeService.settheme">
+
+            <div class="recipe-iamge"><img [class.image-dark]="themeService.settheme"
+                    [src]="fruitData.parsed[0].food.image" alt="">
+                <h3 class="title">{{fruitData.text}}</h3>
+            </div>
+            <div class="recipe-content" [class.bg-nutrients]="themeService.settheme">
+                <h4>Nutrients</h4>
+                <div class="nutrition-facts">
+
+                    <h5>Kilocalories:</h5>
+                    <p>{{fruitData.parsed[0].food.nutrients.ENERC_KCAL}} cal</p>
+
+                    <h5>Fibres:</h5>
+                    <p>{{fruitData.parsed[0].food.nutrients.FIBTG }} gr</p>
+
+                    <h5>Carbohydrates:</h5>
+                    <p>{{fruitData.parsed[0].food.nutrients.CHOCDF }} gr</p>
+
+                    <h5>Fat:</h5>
+                    <p>{{fruitData.parsed[0].food.nutrients.FAT }} gr</p>
+
+                    <h5>Protein:</h5>
+                    <p>{{fruitData.parsed[0].food.nutrients.PROCNT }} gr</p>
+
+                </div>
+                <h6> <a routerLink="/shop">Check our shop</a></h6>
+            </div>
+
+        </div>
+
+    </ng-container>
+
+
+</div>

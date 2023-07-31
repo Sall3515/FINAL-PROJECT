@@ -1,0 +1,43 @@
+<div [class.image-dark]="themeService.settheme" class="hero">
+    <div class="text-content">
+        <h1>Fresh Fruits On Your Table</h1>
+        <p class="paragraph">The Fruit Shop provides conventional, exotic fruits and dry fruits
+            through direct source since 1976.</p>
+        <button [class.btn-color]="themeService.settheme" routerLink="/about/our-story"
+            class="btn btn-outline-dark">Read more</button>
+    </div>
+
+</div>
+
+<div class="container-fluid" [class.dark]="themeService.settheme">
+
+    <div class="row">
+        <div class="feature-box col-lg-4">
+            <i class="icon fas fa-check-circle fa-3x"></i>
+            <h3 [class.white]="themeService.settheme" class="feature-title">Easy to use.</h3>
+            <p [class.white]="themeService.settheme" class="icon-text">Delivering Quality Service, Every Time</p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+            <i class="fa-solid fa-scale-balanced fa-3x"></i>
+            <h3 [class.white]="themeService.settheme" class="feature-title">Balanced life-style</h3>
+            <p [class.white]="themeService.settheme" class="icon-text">Balanced Choices, Boundless Possibilities</p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+            <i class="icon fas fa-heart fa-3x"></i>
+            <h3 [class.white]="themeService.settheme" class="feature-title">100 % Quality</h3>
+            <p [class.white]="themeService.settheme" class="icon-text">Taste the Goodness of Healthful Eating</p>
+        </div>
+    </div>
+
+
+</div>
+<div [class.image-dark]="themeService.settheme" class="delivery-section">
+    <div class="delivery-content">
+        <h1> Use our delivery service</h1>
+        <button class="btn btn-outline-dark" [class.btn-color]="themeService.settheme"><a href="/shop">shop now</a>
+        </button>
+    </div>
+
+</div>
