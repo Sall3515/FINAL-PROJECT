@@ -37,7 +37,7 @@ export class CardService {
     }
     localStorage.setItem(
       ENVIRONMENT.cartKey,
-      JSON.stringify(this.cartProducts) //ბარათი  cart-ში დამატებისას ასევე ინახება  მეხსიერებაშ
+      JSON.stringify(this.cartProducts) //ბარათი  cart-ში დამატებისას ასევე ინახება  მეხსიერებაში
     );
   }
 
@@ -47,11 +47,11 @@ export class CardService {
       (accumulator, card) => accumulator + card.price,
       0
     );
-    localStorage.setItem(ENVIRONMENT.totalPriceKey, JSON.stringify(this.sum)); // ბარათის წაშლისას თანხა რჩება // ეს შეიძლება ცალკე გავიტანო.
+    localStorage.setItem(ENVIRONMENT.totalPriceKey, JSON.stringify(this.sum));
   }
 
   getTotalPrice() {
     const parseTotal = localStorage.getItem(ENVIRONMENT.totalPriceKey);
-    return (this.sum = parseTotal ? JSON.parse(parseTotal) : 0); //    დააფდეითებული მნიშვნელობას ვერ ვაწვდი update: მგონი გავასწორე
+    return (this.sum = parseTotal ? JSON.parse(parseTotal) : 0);
   }
 }

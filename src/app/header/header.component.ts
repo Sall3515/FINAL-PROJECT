@@ -15,14 +15,10 @@ export class HeaderComponent {
   @Output() mySearch = new EventEmitter<string>();
   @Output() signOut = new EventEmitter<void>();
 
-  // @Output() myEvent = new EventEmitter<boolean>();
-
   constructor(public themeService: ThemeService) {}
 
   setValue(): void {
     this.themeDark = !this.themeDark;
     this.themeService.getValue(this.themeDark);
-
-    // console.log(this.themeDark); ქლიქის შემდეგ ფუნქცია გააქტიურდება და სერვისშ შეინახავს settheme-ს რომელიც იქნება true.
   }
 }

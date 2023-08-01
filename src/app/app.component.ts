@@ -38,16 +38,11 @@ export class AppComponent {
   saveTheme() {
     this.theme = this.themeService.settheme;
     let themeString = JSON.stringify(this.theme);
-
     localStorage.setItem('set_theme', themeString);
-    // console.log(themeString);
   }
 
   onSearch(text: string) {
-    // text-ი იღებს  header კომპონენტიდან დაემითებულ   სტრინგს
-
     this.router.navigate(['search-results'], { queryParams: { ingr: text } });
-    //search-result კომპონენტში წვდომა გვექნებ ing პარამეტრის მნიშვნელობაზე
   }
   onSignOut() {
     this.auth.signOut();

@@ -8,7 +8,6 @@ export class ThemeService {
 
   getValue(value: boolean): boolean {
     this.settheme = value;
-    console.log(this.settheme);
     return this.settheme;
   }
 }

@@ -11,7 +11,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 export class CartComponent {
   card: Card[] = [];
 
-  sum: any = 0; // აქ    ჯერ  ვერ  ვხვდები  რა  უნდა  გავასწორო  და ამიტომ any დავამატე , number  მქონდა თავიდან
+  sum: any = 0;
 
   constructor(
     private cardService: CardService,

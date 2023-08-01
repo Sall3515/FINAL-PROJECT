@@ -55,7 +55,7 @@ export class RegisterComponent {
     console.log(this.registerInfo.value);
     this.registerInfo.reset();
     console.log(this.registerInfo.value);
-    // ყველა მნიშვნელობა ხდება null, ამმის თავიდან ასაცილებლად გამოვიყენოთ nonNullableFormBuilder
+    // ყველა მნიშვნელობა ხდება null, ამის თავიდან ასაცილებლად გამოვიყენოთ nonNullableFormBuilder
   }
 
   addPreviousJobs() {
