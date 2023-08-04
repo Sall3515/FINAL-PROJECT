@@ -1,5 +1,6 @@
-<div (click)="saveTheme()">
-    <app-header [user]="user$|async" (signOut)="onSignOut()" (mySearch)="onSearch($event)"></app-header>
+<div>
+    <app-header (click)="saveTheme()" [user]="user$|async" (signOut)="onSignOut()" (mySearch)="onSearch($event)">
+    </app-header>
 
     <router-outlet> </router-outlet>
     <app-footer></app-footer>
