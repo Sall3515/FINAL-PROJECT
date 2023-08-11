@@ -7,7 +7,7 @@ import { Card } from '../types/card';
 export class ProductFilterPipe implements PipeTransform {
   transform(value: Card[], text: string): Card[] {
     return value.filter((product) =>
-      product.title.toLocaleLowerCase().includes(text.toLocaleLowerCase())
+      product.title.toLowerCase().includes(text.toLowerCase())
     );
   }
 }
