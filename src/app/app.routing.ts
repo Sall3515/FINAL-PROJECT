@@ -30,6 +30,6 @@ export const APP_ROUTES: Routes = [
     ],
   },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, //'' this route configuration matches the base URL of my application.
   { path: '**', component: NotFoundComponent }, // უცხო მისმართებისათვის
 ];

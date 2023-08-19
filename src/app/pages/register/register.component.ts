@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormControl,
   NonNullableFormBuilder,
   ValidationErrors,
   ValidatorFn,
@@ -27,11 +25,11 @@ export class RegisterComponent {
       '',
       [
         Validators.required,
-        Validators.pattern(/^(?=.*[a-zA-Z0-9])(?=.*[!.#$%^&,]).{8,}$/),
+        Validators.pattern(/^(?=.*[a-zA-Z0-9])(?=.*[!.#$%^&,]).{8,}$/), //(?=) checks if the string contains at least one alphanumeric character
       ],
     ],
     confirmPassword: ['', [Validators.required]],
-    previousJobs: this.formbuilder.array([this.formbuilder.control('')]),
+    favouriteFruit: this.formbuilder.array([this.formbuilder.control('')]),
   });
 
   constructor(
@@ -39,6 +37,7 @@ export class RegisterComponent {
     public themeService: ThemeService
   ) {
     this.controls['confirmPassword'].setValidators(
+      //this.controls['confirmPassword'] =>having access to  the "confirmPassword"
       this.confirmPasswordValidator(this.controls.password)
     );
   }
@@ -47,8 +46,8 @@ export class RegisterComponent {
     return this.registerInfo.controls;
   }
 
-  get previousJobs() {
-    return this.registerInfo.controls['previousJobs'];
+  get fruit() {
+    return this.registerInfo.controls['favouriteFruit'];
   }
 
   onSignUp() {
@@ -58,27 +57,31 @@ export class RegisterComponent {
     // ყველა მნიშვნელობა ხდება null, ამის თავიდან ასაცილებლად გამოვიყენოთ nonNullableFormBuilder
   }
 
-  addPreviousJobs() {
-    this.previousJobs.push(this.formbuilder.control('')); //formArray-ს bult-in მეთოდია აქ push
-    console.log(this.previousJobs.value);
+  addFruit() {
+    this.fruit.push(this.formbuilder.control('')); //formArray-ს bult-in მეთოდია აქ push
+    console.log(this.fruit.value);
   }
 
-  deleteJobs() {
+  deleteFruit() {
     // submit -ის შემდეგ  სამუშაოს ფორმის ველების მოშორება.
 
-    const length = this.previousJobs.length;
+    const length = this.fruit.length;
     if (length > 0) {
       for (let i = 1; i < length; i++) {
-        this.previousJobs.removeAt(length - i);
+        this.fruit.removeAt(length - i);
         // console.log(this.previousJobs.value);
       }
-      this.previousJobs.reset(); //ბოლო  დარჩენილი მნიშვნელობა  დარესეტდება.
+      this.fruit.reset(); //ბოლო  დარჩენილი მნიშვნელობა  დარესეტდება.
     }
   }
 
-  confirmPasswordValidator(compareTo: AbstractControl): ValidatorFn {
+  //custom validator
+  confirmPasswordValidator(compare: AbstractControl): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      if (control.value !== compareTo.value) {
+      //control is a confirm password input
+      if (control.value !== compare.value) {
+        //compare is a password input
+        //control-ის ის ინსტანცია,რომელზეც ვალიდატორი  არის დაყენებული
         return { confirmPassword: 'Passwords do not match!' };
       }
       return null;

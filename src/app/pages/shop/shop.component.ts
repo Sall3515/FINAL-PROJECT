@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Card } from 'src/app/types/card';
 import { CardService } from 'src/app/services/card.service';
 import { ThemeService } from 'src/app/services/theme.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -16,8 +15,7 @@ export class ShopComponent {
 
   constructor(
     private cardService: CardService,
-    public themeService: ThemeService,
-    private router: Router
+    public themeService: ThemeService
   ) {}
 
   ngOnInit(): void {

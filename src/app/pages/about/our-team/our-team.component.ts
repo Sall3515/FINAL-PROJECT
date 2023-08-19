@@ -15,7 +15,5 @@ export class OurTeamComponent {
 
   message() {
     console.log(this.userMessage);
-    this.userMessage.email = '';
-    this.userMessage.textarea = '';
   }
 }

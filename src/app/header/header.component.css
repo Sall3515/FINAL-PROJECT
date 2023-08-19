@@ -123,6 +123,14 @@ a.navbar-brand:focus {
   a > img {
     margin-left: -30px;
   }
+  i {
+    font-size: 28px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  p {
+    margin-left: 20px;
+  }
   .navbar-brand {
     display: none;
   }
@@ -139,7 +147,13 @@ a.navbar-brand:focus {
     height: 100%;
   }
   .offcanvas-title {
-    margin-top: 10px;
+    position: relative;
+    top: 5px;
+    left: 12px;
+  }
+  .sign-out {
+    position: relative;
+    left: 10px;
   }
   .whitenav {
     background-color: var(--white-clr);
@@ -164,6 +178,10 @@ a.navbar-brand:focus {
   }
   #toggle_checkbox2 {
     display: none;
+  }
+  .loginicon {
+    display: flex;
+    justify-content: space-around;
   }
 }
 /* dark theme */

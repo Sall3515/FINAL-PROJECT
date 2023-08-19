@@ -53,7 +53,7 @@ export class AuthService {
           this.loading$.next(false);
           return of(null);
         }) //აუცილებლად observable უნდა დააბრუნოს, თუ არაფერი არ გვაქვს  დასაბრუნებლი მაშინ შევქმნით observables,
-        //ამ შენთხვევაში  დავაბრუნოთ false
+        //ამ შენთხვევაში  დავაბრუნოთ null
       )
       .subscribe();
   }

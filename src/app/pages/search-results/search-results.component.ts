@@ -13,17 +13,18 @@ import { ThemeService } from 'src/app/services/theme.service';
 export class SearchResultsComponent implements OnInit {
   card: Card[] = [];
   fruitData!: Recipe;
-  loading = false;
+  loading!: boolean;
 
   constructor(
     private dataService: DataService,
-    private activatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute, //ვიყენებთ კომპონენტში,რომ ინფორმაცია მივიღოთ აქტიური სტატუსის რაუთზე, ქვიერი პარამეტრებზე დ. ა. შ.
     public themeService: ThemeService
   ) {}
 
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe((paramMap) => {
-      const ingr = paramMap.get('ingr');
+      const ingr = paramMap.get('ingr'); //ingr ცვლადში ვინახავთ  ingr-მნიშვნელობას(ინფუთში შეტანილ მნიშვნელობას)
+
       if (ingr) {
         //ვამოწმებ არსებობს თუ არა  ingr
         //სერვისში ვაწვდი ingr -ს პარამეტრად
@@ -35,7 +36,7 @@ export class SearchResultsComponent implements OnInit {
       }
     });
     this.dataService.getLoading().subscribe((load) => {
-      this.loading = load; // მეთოდი იღებს მოწოდებულ loading-ის მდგომარეობას , და შემდეგ template-ში გავიტანთ.
+      this.loading = load; // მეთოდი იღებს მოწოდებულ loading-ის მდგომარეობას , და შემდეგ template-ში გავიტანთ. ?
     });
   }
 }

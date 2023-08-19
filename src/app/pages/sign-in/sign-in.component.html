@@ -24,8 +24,8 @@
                     type="password" class="form-control" id="exampleInputPassword1" #passwordControl="ngModel"
                     pattern="[a-zA-Z0-9]+" required>
                 <!-- პატერნი პლიუსის გარეშე მხოლოდ ერთ სიმბოლოს ტიპს საზღვრავს  ???მგონი-->
-                <div class="warning" *ngIf="passwordControl.dirty&& passwordControl.errors?.['pattern']">
-                    <p> Please enter password </p>
+                <div class="warning" *ngIf="passwordControl.errors?.['pattern']">
+                    <p> Password must include only (a-zA-Z, 0-9) symbols </p>
                 </div>
 
             </div>
@@ -36,8 +36,7 @@
                 <label class="link-label form-label text-secondary">Create your account</label>
                 <a [class.color]="themeService.settheme" routerLink="/register">Sign Up</a>
             </div>
-            <button [class.btn-color]="themeService.settheme"
-                [disabled]="usernameControl.invalid  || passwordControl.invalid ||vm.loading" type="submit"
+            <button [class.btn-color]="themeService.settheme" [disabled]="signIn.invalid ||vm.loading" type="submit"
                 class="btn btn-primary">
                 <ng-container *ngIf="!vm.loading">Log In</ng-container>
                 <ng-container *ngIf="vm.loading">

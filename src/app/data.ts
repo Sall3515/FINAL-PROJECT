@@ -66,7 +66,7 @@ export const CARD: Card[] = [
     conditions. It may also 
     boost  memory and help prevent cancer.`,
     price: 4.5,
-    id: 8,
+    id: 7,
   },
   {
     image: '/assets/images/grapes.png',
@@ -74,7 +74,7 @@ export const CARD: Card[] = [
     description: `Grapes contain  resveratrol, lutein, and zeaxanthin — that may help prevent common eye diseases.
     grapes are 81% water, so they may help you reach your hydration goals`,
     price: 3,
-    id: 7,
+    id: 8,
   },
   {
     image: '/assets/images/dragon-fruit.png',

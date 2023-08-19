@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { combineLatest, map } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { ThemeService } from 'src/app/services/theme.service';
-import { User } from 'src/app/types/user';
 
 @Component({
   selector: 'app-sign-in',

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { CARD } from './data';
 import { AuthService } from './services/auth.service';
-
 import { ThemeService } from './services/theme.service';
 
 @Component({
@@ -12,7 +9,6 @@ import { ThemeService } from './services/theme.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  card = CARD;
   theme = false;
   user$ = this.auth.user;
 
@@ -21,10 +17,6 @@ export class AppComponent {
     private router: Router,
     private auth: AuthService
   ) {}
-
-  onDeleteCard(title: string) {
-    this.card = this.card.filter((card) => card.title !== title);
-  }
 
   ngOnInit(): void {
     const settheme = localStorage.getItem('set_theme');
@@ -35,6 +27,7 @@ export class AppComponent {
     }
     this.auth.Init();
   }
+
   saveTheme() {
     this.theme = this.themeService.settheme;
     let themeString = JSON.stringify(this.theme);
@@ -44,6 +37,7 @@ export class AppComponent {
   onSearch(text: string) {
     this.router.navigate(['search-results'], { queryParams: { ingr: text } });
   }
+
   onSignOut() {
     this.auth.signOut();
   }

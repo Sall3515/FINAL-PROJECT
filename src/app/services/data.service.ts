@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   loading$ = new BehaviorSubject<boolean>(false);
-  constructor(private http: HttpClient, private router: Router) {}
+
+  constructor(private http: HttpClient) {}
 
   startLoading(load: boolean) {
     this.loading$.next(load); //დააფდეითებს მდგომარეობას
@@ -33,7 +33,7 @@ export class DataService {
       // pipe-ს, ის ერთმანეთთან  ჯაჭვურად აკავშირებს ოპერატორებს რომლებიც  დაკვირვებად მონაცემებს გარდაქმნიან
       // tap  არ ცვლის არაფერს.
       tap(() => {
-        this.startLoading(false); // aq ki  rom davmalot /shevwyvitot loading-i
+        this.startLoading(false); // შევწყვიტოთ loading-ი
       })
     );
   }

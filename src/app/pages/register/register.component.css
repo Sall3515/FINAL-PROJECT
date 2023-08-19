@@ -9,23 +9,30 @@ p {
   margin-top: 10px;
   color: rgba(231, 50, 50, 0.875);
 }
+span {
+  font-size: 13px;
+  color: rgba(231, 50, 50, 0.875);
+  margin-left: 10px;
+}
 input {
   color: var(--paragraph-clr);
 }
 button.plus {
   position: relative;
   top: -36.8px;
-  left: 277px;
+  left: 279.5px;
   background-color: rgba(17, 161, 17, 0.747);
   border-radius: 0;
+  width: 33.35px;
 }
 button.delete {
   position: relative;
   top: -36.8px;
-  left: 276.5px;
+  left: 279.2px;
   background-color: rgba(235, 24, 87, 0.845);
   border-radius: 0;
 }
+
 .container {
   padding: 0;
   margin: 0;
@@ -58,7 +65,7 @@ button.delete {
   transform: var(--transform-btn);
   cursor: var(--cursor-btn);
 }
-#inputjob {
+#inputFruit {
   border-radius: 5px 0px 0 5px;
 }
 .p {
@@ -76,13 +83,13 @@ button.delete {
   cursor: var(--cursor-btn);
   background-color: rgba(212, 6, 13, 0.87);
 }
-.job {
+.fruit {
   margin-top: 5px;
 }
-.joblist {
+/* .joblist {
   height: 10px;
   color: black;
-}
+} */
 
 @media (max-width: 450px) {
   .register-form {

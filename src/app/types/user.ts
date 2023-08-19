@@ -3,9 +3,6 @@ export interface UserCred {
   password: string;
 }
 
-// username:kminchelle
-// password:0lelplR
-
 export interface User {
   id: number;
   username: string;
