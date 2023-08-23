@@ -1,6 +1,6 @@
-<div [class.dark]="themeService.settheme" class="container">
+<div [class.dark]="themeService.settheme$|async" class="container">
 
-    <img [class.image-dark]="themeService.settheme" src="/assets/images/404.png" alt="">
-    <button [class.image-dark]="themeService.settheme"><a href="/"> Go Back</a>
+    <img [class.image-dark]="themeService.settheme$|async" src="/assets/images/404.png" alt="">
+    <button [class.image-dark]="themeService.settheme$|async"><a href="/"> Go Back</a>
     </button>
 </div>

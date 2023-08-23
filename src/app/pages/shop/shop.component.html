@@ -1,8 +1,8 @@
-<div [class.dark]="themeService.settheme" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+<div [class.dark]="themeService.settheme$|async" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
     <div class="search">
-        <input [(ngModel)]="productSearch" [class.second-input]="themeService.settheme" type="text" class="search-term"
-            placeholder="Search">
-        <button type="submit" class="search-button" [class.second-search-button]="themeService.settheme">
+        <input [(ngModel)]="productSearch" [class.second-input]="themeService.settheme$|async" type="text"
+            class="search-term" placeholder="Search">
+        <button type="submit" class="search-button" [class.second-search-button]="themeService.settheme$|async">
             <i class="fa fa-search"></i>
         </button>
     </div>

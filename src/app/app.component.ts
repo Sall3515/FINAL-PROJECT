@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { ThemeService } from './services/theme.service';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,6 @@ import { ThemeService } from './services/theme.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  theme = false;
   user$ = this.auth.user;
 
   constructor(
@@ -18,20 +18,10 @@ export class AppComponent {
     private auth: AuthService
   ) {}
 
-  ngOnInit(): void {
-    const settheme = localStorage.getItem('set_theme');
-    if (settheme === 'true') {
-      this.themeService.settheme = true;
-    } else {
-      this.themeService.settheme = false;
-    }
-    this.auth.Init();
-  }
+  ngOnInit() {
+    this.themeService.getThemeFromLocal();
 
-  saveTheme() {
-    this.theme = this.themeService.settheme;
-    let themeString = JSON.stringify(this.theme);
-    localStorage.setItem('set_theme', themeString);
+    this.auth.Init();
   }
 
   onSearch(text: string) {

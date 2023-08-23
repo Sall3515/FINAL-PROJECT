@@ -1,16 +1,16 @@
 <!-- ამ  კომპონენტში template driven forms-არის გამოყენებული -->
 
 <ng-container *ngIf="vm$|async as vm">
-    <div class="form" [class.dark]="themeService.settheme">
+    <div class="form" [class.dark]="themeService.settheme$|async">
         <div class="logo">
-            <img [class.image-dark]="themeService.settheme" src="/assets/images/log.png" width="150px" alt="">
+            <img [class.image-dark]="themeService.settheme$|async" src="/assets/images/log.png" width="150px" alt="">
         </div>
         <form #signIn="ngForm" (ngSubmit)="OnSignIn()">
             <div class="mb-3">
 
-                <label [class.white]="themeService.settheme" for="username" class="form-label">User Name </label>
-                <input [class.input-color]="themeService.settheme" [(ngModel)]="signInInfo.username" name="username"
-                    type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                <label [class.white]="themeService.settheme$|async" for="username" class="form-label">User Name </label>
+                <input [class.input-color]="themeService.settheme$|async" [(ngModel)]="signInInfo.username"
+                    name="username" type="text" class="form-control" id="username" aria-describedby="emailHelp"
                     #usernameControl="ngModel" required>
                 <div class="warning" *ngIf="usernameControl.invalid && usernameControl.dirty">
                     <p> Please enter user name </p>
@@ -18,11 +18,11 @@
 
             </div>
             <div class="mb-3">
-                <label [class.white]="themeService.settheme" for="exampleInputPassword1"
+                <label [class.white]="themeService.settheme$|async" for="exampleInputPassword1"
                     class="form-label">Password</label>
-                <input [class.input-color]="themeService.settheme" [(ngModel)]="signInInfo.password" name="password"
-                    type="password" class="form-control" id="exampleInputPassword1" #passwordControl="ngModel"
-                    pattern="[a-zA-Z0-9]+" required>
+                <input [class.input-color]="themeService.settheme$|async" [(ngModel)]="signInInfo.password"
+                    name="password" type="password" class="form-control" id="exampleInputPassword1"
+                    #passwordControl="ngModel" pattern="[a-zA-Z0-9]+" required>
                 <!-- პატერნი პლიუსის გარეშე მხოლოდ ერთ სიმბოლოს ტიპს საზღვრავს  ???მგონი-->
                 <div class="warning" *ngIf="passwordControl.errors?.['pattern']">
                     <p> Password must include only (a-zA-Z, 0-9) symbols </p>
@@ -34,10 +34,10 @@
             </div>
             <div>
                 <label class="link-label form-label text-secondary">Create your account</label>
-                <a [class.color]="themeService.settheme" routerLink="/register">Sign Up</a>
+                <a [class.color]="themeService.settheme$|async" routerLink="/register">Sign Up</a>
             </div>
-            <button [class.btn-color]="themeService.settheme" [disabled]="signIn.invalid ||vm.loading" type="submit"
-                class="btn btn-primary">
+            <button [class.btn-color]="themeService.settheme$|async" [disabled]="signIn.invalid ||vm.loading"
+                type="submit" class="btn btn-primary">
                 <ng-container *ngIf="!vm.loading">Log In</ng-container>
                 <ng-container *ngIf="vm.loading">
                     <div class="spinner-border text-light" role="status">

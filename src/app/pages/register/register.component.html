@@ -1,35 +1,39 @@
 <!-- ამ  კომპონენტში reactive forms-არის გამოყენებული -->
 
-<div class="container" [class.dark]="themeService.settheme">
+<div class="container" [class.dark]="themeService.settheme$|async">
     <div>
-        <h2 [class.white]="themeService.settheme">
+        <h2 [class.white]="themeService.settheme$|async">
             Sign Up
         </h2>
-        <p class="p" [class.white]="themeService.settheme">It's quick and easy.</p>
+        <p class="p" [class.white]="themeService.settheme$|async">It's quick and easy.</p>
     </div>
     <div class="register-form">
-        <form [formGroup]="registerInfo" [class.form-color]="themeService.settheme" class="row g-3"
+        <form [formGroup]="registerInfo" [class.form-color]="themeService.settheme$|async" class="row g-3"
             (ngSubmit)="onSignUp()">
             <div class="col-12">
-                <label [class.white]="themeService.settheme" for="inputName" class="form-label">First Name</label>
-                <input [class.input-color]="themeService.settheme" name="firstName" type="text" class="form-control"
-                    id="inputName" placeholder="First Name" formControlName="firstName" required>
+                <label [class.white]="themeService.settheme$|async" for="inputName" class="form-label">First
+                    Name</label>
+                <input [class.input-color]="themeService.settheme$|async" name="firstName" type="text"
+                    class="form-control" id="inputName" placeholder="First Name" formControlName="firstName" required>
             </div>
             <div class="col-12">
-                <label [class.white]="themeService.settheme" for="inputLastName" class="form-label">Last Name</label>
-                <input [class.input-color]="themeService.settheme" name="lastName" type="text" class="form-control"
-                    id="inputLastName" placeholder="Last Name" formControlName="lastName" required>
+                <label [class.white]="themeService.settheme$|async" for="inputLastName" class="form-label">Last
+                    Name</label>
+                <input [class.input-color]="themeService.settheme$|async" name="lastName" type="text"
+                    class="form-control" id="inputLastName" placeholder="Last Name" formControlName="lastName" required>
             </div>
 
 
 
             <div class="col-12" formArrayName="favouriteFruit">
 
-                <label [class.white]="themeService.settheme" for="inputFruit" class="form-label">Add Fruit<span>not
+                <label [class.white]="themeService.settheme$|async" for="inputFruit" class="form-label">Add
+                    Fruit<span>not
                         required *</span>
                 </label>
-                <input [class.input-color]="themeService.settheme" name="fruit" type="text" class="form-control job"
-                    id="inputFruit" *ngFor="let fruitControl of fruit.controls; let i = index" [formControlName]="i">
+                <input [class.input-color]="themeService.settheme$|async" name="fruit" type="text"
+                    class="form-control job" id="inputFruit" *ngFor="let fruitControl of fruit.controls; let i = index"
+                    [formControlName]="i">
 
                 <button (click)="addFruit()" type="button" class="btn plus">
                     +</button>
@@ -40,8 +44,8 @@
             </div>
 
             <div class="col-md-12">
-                <label [class.white]="themeService.settheme" for="inputEmail" class="form-label">Email</label>
-                <input [class.input-color]="themeService.settheme" name="email" type="email" class="form-control"
+                <label [class.white]="themeService.settheme$|async" for="inputEmail" class="form-label">Email</label>
+                <input [class.input-color]="themeService.settheme$|async" name="email" type="email" class="form-control"
                     id="inputEmail" formControlName="email" required>
 
                 <div class="validation-error" *ngIf="controls.email.errors?.['email']&& controls.email.dirty">
@@ -51,10 +55,11 @@
 
             </div>
             <div class="col-md-6">
-                <label [class.white]="themeService.settheme" for="inputPassword" class="form-label">Password</label>
+                <label [class.white]="themeService.settheme$|async" for="inputPassword"
+                    class="form-label">Password</label>
                 <input (input)="controls.confirmPassword.updateValueAndValidity()"
-                    [class.input-color]="themeService.settheme" name="password" type="password" class="form-control"
-                    id="inputPassword" formControlName="password" required>
+                    [class.input-color]="themeService.settheme$|async" name="password" type="password"
+                    class="form-control" id="inputPassword" formControlName="password" required>
 
                 <div class="validation-error" *ngIf="controls.password.errors?.['pattern']&& controls.password.dirty">
                     <p> Password should contain at least one of this A-z ,0-9,!.#$%^& characters</p>
@@ -62,15 +67,15 @@
             </div>
 
             <div class=" col-md-6">
-                <label [class.white]="themeService.settheme" for="confirmPassword" class="form-label"> Confirm
+                <label [class.white]="themeService.settheme$|async" for="confirmPassword" class="form-label"> Confirm
                     Password</label>
-                <input [class.input-color]="themeService.settheme" name="password" type="password" class="form-control"
-                    id="confirmPassword" formControlName="confirmPassword" required>
+                <input [class.input-color]="themeService.settheme$|async" name="password" type="password"
+                    class="form-control" id="confirmPassword" formControlName="confirmPassword" required>
             </div>
 
 
             <div class="col-12">
-                <button (click)="deleteFruit()" [class.btn-color]="themeService.settheme" type="submit"
+                <button (click)="deleteFruit()" [class.btn-color]="themeService.settheme$|async" type="submit"
                     class="btn btn-primary" [disabled]="registerInfo.invalid">Create
                     Account</button>
             </div>

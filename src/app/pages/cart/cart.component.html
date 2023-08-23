@@ -1,10 +1,10 @@
-<div class="container" [class.dark]="themeService.settheme">
+<div class="container" [class.dark]="themeService.settheme$|async">
 
-    <h2 [class.white]="themeService.settheme">My Cart</h2>
+    <h2 [class.white]="themeService.settheme$|async">My Cart</h2>
 
 
-    <div class="line" [class.white-line]="themeService.settheme"></div>
-    <h5 [class.yellow]="themeService.settheme"> Cost: {{sum | currency: "EUR"}}</h5>
+    <div class="line" [class.white-line]="themeService.settheme$|async"></div>
+    <h5 [class.yellow]="themeService.settheme$|async"> Cost: {{sum | currency: "EUR"}}</h5>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
 

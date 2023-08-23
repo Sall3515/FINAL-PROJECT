@@ -1,11 +1,11 @@
-<div [class.dark]="themeService.settheme" class="card ">
-    <img [class.image-dark]="themeService.settheme" [src]="card.image" alt="Avatar" style="width:100% ">
+<div [class.dark]="themeService.settheme$|async" class="card ">
+    <img [class.image-dark]="themeService.settheme$|async" [src]="card.image" alt="Avatar" style="width:100% ">
 
     <div class="container">
-        <h2 [class.white]="themeService.settheme">{{card.title}}</h2>
-        <p [class.white]="themeService.settheme">{{card.description}}
+        <h2 [class.white]="themeService.settheme$|async">{{card.title}}</h2>
+        <p [class.white]="themeService.settheme$|async">{{card.description}}
         </p>
-        <p class="currency" [class.white]="themeService.settheme">{{card.price | currency: "EUR"}}
+        <p class="currency" [class.white]="themeService.settheme$|async">{{card.price | currency: "EUR"}}
         </p>
     </div>
 

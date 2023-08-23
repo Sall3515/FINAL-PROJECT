@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ThemeService } from '../services/theme.service';
 import { User } from '../types/user';
 
@@ -9,16 +10,16 @@ import { User } from '../types/user';
 })
 export class HeaderComponent {
   search!: string;
-  @Input() themeDark = false;
 
   @Input() user: User | null = null;
+
   @Output() mySearch = new EventEmitter<string>();
   @Output() signOut = new EventEmitter<void>();
 
   constructor(public themeService: ThemeService) {}
 
   setValue(): void {
-    this.themeDark = !this.themeDark;
-    this.themeService.getValue(this.themeDark);
+    this.themeService.getNewTheme();
+    this.themeService.saveTheme();
   }
 }

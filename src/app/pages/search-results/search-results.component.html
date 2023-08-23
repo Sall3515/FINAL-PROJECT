@@ -1,8 +1,8 @@
-<div class="container" [class.dark]="themeService.settheme">
+<div class="container" [class.dark]="themeService.settheme$|async">
 
-    <h2 [class.white]="themeService.settheme"> Nutrients in food</h2>
-    <div [class.white-line]="themeService.settheme" class="line"></div>
-    <p class="note" [class.white]="themeService.settheme"> Make a choise based on numbers </p>
+    <h2 [class.white]="themeService.settheme$|async"> Nutrients in food</h2>
+    <div [class.white-line]="themeService.settheme$|async" class="line"></div>
+    <p class="note" [class.white]="themeService.settheme$|async"> Make a choise based on numbers </p>
 
     <div *ngIf="loading" class="loaders">
         <div class="spinner-grow text-secondary" role="status">
@@ -16,9 +16,9 @@
         </div>
     </div>
     <ng-container *ngIf="!this.fruitData._links">
-        <h1 [class.white]="themeService.settheme" class="warning-text">Product does not exist.</h1>
+        <h1 [class.white]="themeService.settheme$|async" class="warning-text">Product does not exist.</h1>
         <div class="go-back-button">
-            <button [class.btn]="themeService.settheme">
+            <button [class.btn]="themeService.settheme$|async">
                 <a href="/home">Go Back</a>
             </button>
         </div>
@@ -27,13 +27,13 @@
 
 
     <ng-container *ngIf="this.fruitData._links">
-        <div class="recipe-box" [class.box-shadow]="themeService.settheme">
+        <div class="recipe-box" [class.box-shadow]="themeService.settheme$|async">
 
-            <div class="recipe-iamge"><img [class.image-dark]="themeService.settheme"
+            <div class="recipe-iamge"><img [class.image-dark]="themeService.settheme$|async"
                     [src]="fruitData.parsed[0].food.image" alt="">
                 <h3 class="title">{{fruitData.text}}</h3>
             </div>
-            <div class="recipe-content" [class.bg-nutrients]="themeService.settheme">
+            <div class="recipe-content" [class.bg-nutrients]="themeService.settheme$|async">
                 <h4>Nutrients</h4>
                 <div class="nutrition-facts">
 

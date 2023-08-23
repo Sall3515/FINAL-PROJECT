@@ -25,7 +25,7 @@ export class RegisterComponent {
       '',
       [
         Validators.required,
-        Validators.pattern(/^(?=.*[a-zA-Z0-9])(?=.*[!.#$%^&,]).{8,}$/), //(?=) checks if the string contains at least one alphanumeric character
+        Validators.pattern(/^(?=.*[a-zA-Z0-9])(?=.*[!.#$%^&,]).{8,}$/), //(?=) checks if the string contains at least one  character  from ([a-zA-Z0-9],[!.#$%^&,])
       ],
     ],
     confirmPassword: ['', [Validators.required]],

@@ -1,7 +1,5 @@
 import { Card } from './types/card';
 
-// თუ 2 ერთნაირი ბარათი მაქვს , ერთერთის წაშლისას  ორივე იშლება
-
 export const CARD: Card[] = [
   {
     image: '/assets/images/blueberry.png',
